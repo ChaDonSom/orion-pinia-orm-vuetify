@@ -9,6 +9,7 @@ import '../css/app.css'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import '@mdi/font/css/materialdesignicons.css'
 import { dark, light } from './vuetify-themes'
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'

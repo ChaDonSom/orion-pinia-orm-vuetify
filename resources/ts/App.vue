@@ -13,10 +13,6 @@ const dark = useDark({
 
 <template>
   <VLayout>
-    <VAppBar color="primary">
-      <VToolbarTitle>Orion, Pinia ORM, Vuetify</VToolbarTitle>
-    </VAppBar>
-
     <VNavigationDrawer>
       <VList>
         <VListItem to="/" title="Home" />
@@ -24,6 +20,13 @@ const dark = useDark({
         <VListItem to="/register" title="Register" />
       </VList>
     </VNavigationDrawer>
+    
+    <VAppBar :elevation="0">
+      <template #prepend>
+        <VAppBarNavIcon class="text-black" />
+      </template>
+      <VToolbarTitle>Orion, Pinia ORM, Vuetify</VToolbarTitle>
+    </VAppBar>
 
     <VMain>
       <RouterView />
