@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDark } from '@vueuse/core'
+import { useDark, useStorage } from '@vueuse/core'
 import { RouterView } from 'vue-router/auto'
 import { useTheme } from 'vuetify'
 
@@ -9,11 +9,13 @@ const dark = useDark({
     theme.global.name.value = dark ? 'dark' : 'light'
   }
 })
+
+const isShowingAppDrawer = useStorage(import.meta.env.VITE_APP_NAME + '-isShowingAppBar', true)
 </script>
 
 <template>
-  <VLayout>
-    <VNavigationDrawer>
+  <VLayout></VLayout>
+    <VNavigationDrawer v-model="isShowingAppDrawer">
       <VList>
         <VListItem to="/" title="Home" />
         <VListItem to="/login" title="Log in" />
@@ -23,7 +25,7 @@ const dark = useDark({
     
     <VAppBar :elevation="0">
       <template #prepend>
-        <VAppBarNavIcon class="text-black" />
+        <VAppBarNavIcon class="text-black" @click="isShowingAppDrawer = !isShowingAppDrawer" />
       </template>
       <VToolbarTitle>Orion, Pinia ORM, Vuetify</VToolbarTitle>
     </VAppBar>
