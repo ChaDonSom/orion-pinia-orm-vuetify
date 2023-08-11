@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { useDark } from '@vueuse/core'
 import { RouterView } from 'vue-router/auto'
+import { useTheme } from 'vuetify'
+
+const dark = useDark({
+  onChanged: dark => {
+    const theme = useTheme()
+    theme.global.name.value = dark ? 'dark' : 'light'
+  }
+})
 </script>
 
 <template>

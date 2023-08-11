@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@vitejs/plugin-vue": "^4.2.3",
+        "@vueuse/core": "^10.3.0",
         "pinia": "^2.1.6",
         "pinia-orm": "^1.6.7",
         "typescript": "^5.1.6",
