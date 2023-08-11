@@ -16,6 +16,6 @@ const router = createRouter({
 
 const pinia = createPinia().use(createORM())
 
-app.use(createPinia()).use(router).use(pinia)
+app.use(router).use(pinia)
 
 app.mount('#app')
