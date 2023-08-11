@@ -14,7 +14,7 @@ const isShowingAppDrawer = useStorage(import.meta.env.VITE_APP_NAME + '-isShowin
 </script>
 
 <template>
-  <VLayout></VLayout>
+  <VLayout>
     <VNavigationDrawer v-model="isShowingAppDrawer">
       <VList>
         <VListItem to="/" title="Home" />
