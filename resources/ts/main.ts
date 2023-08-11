@@ -1,15 +1,21 @@
-import "../css/app.css";
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import App from './App.vue'
+import { createRouter, createWebHistory } from 'vue-router/auto'
+import axios from 'axios'
+import '../css/app.css'
+import { createORM } from 'pinia-orm'
 
-import axios from "axios";
-axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
+const app = createApp(App)
 
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-import App from "./App.vue";
+const router = createRouter({
+    history: createWebHistory(),
+})
 
-const app = createApp(App);
+const pinia = createPinia().use(createORM())
 
-app.use(createPinia());
+app.use(createPinia()).use(router).use(pinia)
 
-app.mount("#app");
+app.mount('#app')
