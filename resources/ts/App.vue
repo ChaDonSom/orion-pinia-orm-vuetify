@@ -4,8 +4,8 @@ import { RouterView } from 'vue-router/auto'
 
 <template>
   <VLayout>
-    <VAppBar>
-      <VToolbarTitle title="Orion, Pinia ORM, Vuetify" />
+    <VAppBar color="primary">
+      <VToolbarTitle>Orion, Pinia ORM, Vuetify</VToolbarTitle>
     </VAppBar>
 
     <VNavigationDrawer>
