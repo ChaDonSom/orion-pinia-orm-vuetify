@@ -11,8 +11,12 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
 import { dark, light } from './vuetify-themes'
+import { Orion } from '@tailflow/laravel-orion/lib/orion'
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
+Orion.init(import.meta.env.VITE_APP_URL, 'api')
+Orion.setToken('access-token-here')
 
 const app = createApp(App)
 

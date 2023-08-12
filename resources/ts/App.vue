@@ -20,6 +20,7 @@ const isShowingAppDrawer = useStorage(import.meta.env.VITE_APP_NAME + '-isShowin
         <VListItem to="/" title="Home" prepend-icon="mdi-home" />
         <VListItem to="/login" title="Log in" prepend-icon="mdi-login" />
         <VListItem to="/register" title="Register" prepend-icon="mdi-account-plus" />
+        <VListItem to="/vehicles" title="Vehicles" prepend-icon="mdi-car" />
       </VList>
     </VNavigationDrawer>
     

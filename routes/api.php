@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Orion\Facades\Orion;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['as' => 'orion.'], function () {
+    Orion::resource('vehicles', VehicleController::class);
 });
